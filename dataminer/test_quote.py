@@ -15,12 +15,6 @@ class MyTestCase(unittest.TestCase):
         self.assertGreater(quote, 1, "quote was not greater than one for BTC-GBP. Price was: " + float(quote))
         self.assertIsInstance(quote, float)
 
-    def test_get_ask(self):
-        # returns float
-        quote = Quote('BTC','GBP').get_ask()
-        self.assertGreater(quote, 1, "quote was not greater than one for BTC-GBP. Price was: " + float(quote))
-        self.assertIsInstance(quote, float)
-
     def test_buy_price(self):
         # returns float
         quote = Quote('BTC','GBP').get_buy_price()
