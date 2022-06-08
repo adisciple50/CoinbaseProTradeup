@@ -6,13 +6,13 @@ from database.sqlite import Storage
 class MyTestCase(unittest.TestCase):
     def test_create_table_if_not_exists(self):
         db = sqlite3.connect('test.db')
-        Storage.create_table_if_not_exists()
+        Storage('test.db').create_table_if_not_exists()
         db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='quotes'")
         self.assertGreater(db.cursor().fetchone()[0],0)
 
     def test_delete_table(self):
         db = sqlite3.connect('test.db')
-        Storage.delete_table()
+        Storage('test.db').delete_table()
         db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='quotes'")
         self.assertEqual(db.cursor().fetchone()[0], 0)
 
