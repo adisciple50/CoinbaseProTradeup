@@ -6,19 +6,19 @@ class MyTestCase(unittest.TestCase):
     def test_get_bid(self):
         # returns float
         quote = Quote('BTC','GBP').get_bid()
-        self.assertGreater(quote,1,"quote was not greater than one for BTC-GBP. Price was: " + str(quote))
+        self.assertGreater(quote,1,"quote was not greater than one for BTC-GBP. Price was: " + float(quote))
         self.assertIsInstance(quote,float)
 
     def test_get_ask(self):
         # returns float
         quote = Quote('BTC','GBP').get_ask()
-        self.assertGreater(quote, 1, "quote was not greater than one for BTC-GBP. Price was: " + str(quote))
+        self.assertGreater(quote, 1, "quote was not greater than one for BTC-GBP. Price was: " + float(quote))
         self.assertIsInstance(quote, float)
 
     def test_buy_price(self):
         # returns float
         quote = Quote('BTC','GBP').get_buy_price()
-        self.assertGreater(quote, 1, "quote was not greater than one for BTC-GBP. Price was: " + str(quote))
+        self.assertGreater(quote, 1, "quote was not greater than one for BTC-GBP. Price was: " + float(quote))
         self.assertIsInstance(quote, float)
 
     def test_get_amount(self):
@@ -29,7 +29,7 @@ class MyTestCase(unittest.TestCase):
     def test_get_sell_price(self):
         # returns float
         quote = Quote('BTC','GBP').get_sell_price()
-        self.assertLess(quote, 1, "quote was not less than one for BTC-GBP. Price was: " + str(quote))
+        self.assertLess(quote, 1, "quote was not less than one for BTC-GBP. Price was: " + float(quote))
         self.assertIsInstance(quote, float)
 
     def test_to_gbp(self):
@@ -38,7 +38,7 @@ class MyTestCase(unittest.TestCase):
         # and then converting it to gbp
         # returns float
         quote = Quote('BTC', 'GBP').to_gbp()
-        self.assertGreater(quote, 1, "quote was not more than one for BTC-GBP. Price was: " + str(quote))
+        self.assertLess(quote, 1, "quote was not more than one for BTC-GBP. Price was: " + float(quote))
         self.assertIsInstance(quote, float)
 
     def test_investment_quote(self):
