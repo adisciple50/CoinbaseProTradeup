@@ -38,7 +38,7 @@ class MyTestCase(unittest.TestCase):
         # and then converting it to gbp
         # returns float
         quote = Quote('BTC', 'GBP').to_gbp()
-        self.assertGreater(quote, 1, "quote was not more than one for BTC-GBP. Price was: " + float(quote))
+        self.assertLess(quote, 1, "quote was not more than one for BTC-GBP. Price was: " + float(quote))
         self.assertIsInstance(quote, float)
 
     def test_investment_quote(self):
