@@ -18,6 +18,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_data_has_been_inserted(self):
         db = sqlite3.connect('test.db')
+        Storage('test.db').truncate()
         Storage('test.db').bulk_insert(Miner().parse_quotes_for_database())
         quotes = db.execute('SELECT * FROM quotes')
         self.assertGreater(len(quotes),0)
