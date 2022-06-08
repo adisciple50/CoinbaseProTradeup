@@ -1,6 +1,6 @@
 import unittest
 import sqlite3
-from dataminer.dataminer import Miner
+from dataminer.miner import Miner
 from database.sqlite import Storage
 
 class MyTestCase(unittest.TestCase):
