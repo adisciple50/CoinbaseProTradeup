@@ -39,7 +39,7 @@ class Quote:
         try:
             return self.get_bid() * (1/(Quote(self.currency_to,'GBP').get_buy_price()))
         except ZeroDivisionError:
-            return 0
+            return 0.0
 
     def investment_quote(self):
         return float(Quote(self.currency_from,'GBP' ).get_buy_price())
