@@ -11,6 +11,6 @@ class Miner:
     def construct_tradeup_sequence(self):
         pass
 
-    def parse_for_dateabase(self):
+    def parse_quotes_for_database(self):
         pass
 
