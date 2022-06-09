@@ -45,7 +45,10 @@ class Quote:
         return float(Quote(self.currency_from,'GBP' ).get_buy_price())
 
     def get_sell_price(self):
-        return 1/self.get_bid()
+        try:
+            return 1/self.get_bid()
+        except ZeroDivisionError:
+            return 0.0
 
     def get_exchange_currency(self):
         return self.currency_to

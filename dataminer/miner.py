@@ -1,5 +1,5 @@
 from cbpro import PublicClient
-from product import Quote
+from .product import Quote
 import itertools
 
 class Miner:
