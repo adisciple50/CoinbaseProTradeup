@@ -47,4 +47,10 @@ class Quote:
     def get_sell_price(self):
         return 1/self.get_bid()
 
+    def get_exchange_currency(self):
+        return self.currency_to
+    def get_base_currency(self):
+        return self.currency_from
+
+
 
